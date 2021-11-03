@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+[{ name: 'Margherita', price: 5 },
+ { name: 'Pepperoni', price: 6 }].each do |params|
+  PizzaType.create!(params)
+end

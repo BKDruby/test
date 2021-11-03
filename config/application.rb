@@ -18,5 +18,10 @@ module BackendChallenge
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |g|
+      g.test_framework :rspec, controller_specs: true, request_specs: false
+      g.fixture_replacement :factory_bot, suffix_factory: 'factory'
+    end
   end
 end

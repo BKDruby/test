@@ -1,0 +1,26 @@
+<h1>Orders</h1>
+<%= link_to 'Create order', new_order_path %>
+<div>
+  <%= prev_page_btn %>
+  <%= next_page_btn unless @orders.last_page? %>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>User</th>
+      <th>Items</th>
+      <th>Total Price</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @orders.each do |order| %>
+      <tr>
+        <td><%= order.id %></td>
+        <td><%= order.user.first_name %></td>
+        <td><%= order.order_items.map { |item| "#{item.pizza_type.name} * #{item.amount}" }.join(' ') %></td>
+        <td><%= order.total_price %> $</td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

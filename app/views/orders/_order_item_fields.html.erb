@@ -1,0 +1,11 @@
+<div class="form-group row">
+  <div class="col-3">
+    <%= f.label :amount %>
+    <%= f.number_field :amount, class: "form-control" %>
+  </div>
+  <div class="col-3">
+    <%= f.label :pizza_type_id %>
+    <%= f.select :pizza_type_id, PizzaType.all.pluck(:name, :id), {}, class: "form-control" %>
+  </div>
+</div>
+
